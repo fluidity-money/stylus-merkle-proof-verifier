@@ -13,8 +13,10 @@
 
 #![cfg_attr(target_arch = "wasm32", no_std)]
 
+#[cfg(feature = "alloc")]
 extern crate alloc;
 
+#[cfg(feature = "alloc")]
 use alloc::vec::Vec;
 
 use array_concat::concat_arrays;
@@ -108,6 +110,7 @@ pub fn verify(
 /// # Errors
 ///
 /// * [`MultiProofError`] - If the arguments are well-formed, but invalid.
+#[cfg(feature = "alloc")]
 pub fn verify_multi_proof(
     proof: &[U],
     proof_flags: &[bool],

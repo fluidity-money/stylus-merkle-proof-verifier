@@ -1,6 +1,6 @@
 [package]
 name = "stylus-merkle-proof-verifier"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2024"
 license = "MIT"
 description = "Fork of OpenZeppelin's Merkle verification code without the dependency tree."
@@ -16,3 +16,11 @@ proptest = "1.11.0"
 bobcat-maths = { version = "=0.11.3", defualt-features = false, features = ["proptest", "alloy-enabled"] }
 const-hex = "1.19.3"
 rand = "0.10.3"
+
+[features]
+default = ["alloc"]
+alloc = []
+
+[package.metadata.docs.rs]
+no-default-features = true
+features = ["alloc"]
